@@ -12,18 +12,23 @@
 	<link rel="stylesheet" href="css/demo.css">
 	<link rel="stylesheet" href="css/form-register.css">
 
-	<script>
-      function validate() {
-      	var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
-      	if(password.value != confirm_password.value) {
-    		confirm_password.setCustomValidity("Passwords Don't Match");
-  		} else {
-    		confirm_password.setCustomValidity('');
+	<script language='javascript' type='text/javascript'>
+    	function validate(input) {
+    		var password = document.getElementById("password")
+      		if(password.value != input.value) {
+    			confirm_password.setCustomValidity("Passwords Don't Match");
+  			} else {
+    			confirm_password.setCustomValidity('');
+  			}
   		}
-
-		password.onchange = validatePassword;
-		confirm_password.onkeyup = validatePassword;
-     }
+  		function check() {
+    		var password = document.getElementById("password"), confirm = document.getElementById("confirm_password")
+      		if(password.value != confirm.value) {
+    			confirm_password.setCustomValidity("Passwords Don't Match");
+  			} else {
+    			confirm_password.setCustomValidity('');
+  			}
+  		}
      </script>
 
 </head>
@@ -36,7 +41,7 @@
 
     <div class="main-content">
 
-        <form class="form-register" method="post" action="#" onsubmit="return validate();">
+        <form class="form-register" method="post" action="#">
 
             <div class="form-register-with-email">
 
@@ -63,19 +68,19 @@
                     <div class="form-row">
                         <label>
                             <span>Password</span>
-                            <input type="password" name="password" id = "password" required>
+                            <input type="password" name="password" id = "password" minlength = "6" required>
                         </label>
                     </div>
 
                     <div class="form-row">
                         <label>
                             <span>Confirm Password</span>
-                            <input type="password" name="password" id = "confirm_password" required>
+                            <input type="password" name="confirm_password" id = "confirm_password" oninput="validate(this)" required>
                         </label>
                     </div>
 
                     <div class="form-row">
-                        <button type="submit">Register</button>
+                        <button type="submit" onclick="check()">Register</button>
                     </div>
 
                 </div>
