@@ -186,6 +186,20 @@ html{
     text-decoration: none;
 }
 
+.form-row .form-button{
+    color:  #ffffff;
+    display: block;
+    width: 145px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color:  rgba(123, 195, 226, 0.9);
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin: 8px auto;
+    text-decoration: none;
+}
+
 /*	Making the form responsive. Remove these media queries
     if you don't need the form to work on mobile devices. */
 
